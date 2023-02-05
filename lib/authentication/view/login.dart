@@ -5,6 +5,7 @@ import 'package:money_goes_brr/authentication/view/sign_in.dart';
 // import 'package:waste_not/screens/presentation/signup.dart';
 
 import '../controller/login_controller.dart';
+import 'auth.dart';
 
 class Login extends StatelessWidget {
 // put login controller
@@ -135,35 +136,6 @@ class Login extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20.h),
-              // Padding(
-              //   padding: EdgeInsets.symmetric(horizontal: 8.sp),
-              //   child: TextFormField(
-              //     textAlign: TextAlign.center,
-              //     keyboardType: TextInputType.text,
-              //     onFieldSubmitted: (value) {},
-              //     onChanged: (value) {
-              //       email = value;
-              //     },
-              //     decoration: InputDecoration(
-              //       hintText: 'Sign In',
-              //       hintStyle: TextStyle(
-              //         color: Colors.white,
-              //         fontSize: 17.sp,
-              //         fontWeight: FontWeight.w600,
-              //       ),
-              //       border: OutlineInputBorder(
-              //         borderRadius: BorderRadius.circular(8.sp),
-              //         borderSide: const BorderSide(
-              //           width: 2,
-              //           style: BorderStyle.none,
-              //         ),
-              //       ),
-              //       filled: true,
-              //       contentPadding: EdgeInsets.all(17.sp),
-              //       fillColor: Color(0xFFF6800D),
-              //     ),
-              //   ),
-              // ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -179,9 +151,14 @@ class Login extends StatelessWidget {
                         BorderRadius.all(Radius.circular(8.sp))),
 
                     child: Center(
-                      child: Text(
-                        'Login',
-                        style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w600, color: Colors.white),
+                      child: GestureDetector(
+                        onTap: () {
+                          Get.to(Auth());
+                        },
+                        child: Text(
+                          'Login',
+                          style: TextStyle(fontSize: 17.sp, fontWeight: FontWeight.w600, color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
